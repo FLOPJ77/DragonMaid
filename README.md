@@ -1,8 +1,8 @@
 # DragonMaid
 
-DragonMaid is a secure, lightweight personal AI assistant. It provides low-overhead task automation, scheduling, local memory consolidation, and terminal action handling.
+This is DragonMaid version 1, a secure, lightweight personal AI assistant. It provides low-overhead task automation, scheduling, local memory consolidation, and terminal action handling.
 
-Designed for small, consumer-grade models (such as `granite4.1:8b`), DragonMaid aims to be fast and safe without the resource strain of heavy multi-agent frameworks.
+Designed for small LLMs (such as `granite4.1:8b`), DragonMaid aims to be fast and safe without the resource strain of heavy multi-agent frameworks.
 
 ## Security & Philosophy
 
@@ -13,6 +13,7 @@ Designed for small, consumer-grade models (such as `granite4.1:8b`), DragonMaid 
 
 ---
 
+
 ## Installation
 
 ### Prerequisites
@@ -21,4 +22,8 @@ Designed for small, consumer-grade models (such as `granite4.1:8b`), DragonMaid 
 - **Ollama** or any OpenAI-compliant API wrapper running locally.
 
 ### Setup
+work in progress...
+
+
+## Commands
 work in progress...
