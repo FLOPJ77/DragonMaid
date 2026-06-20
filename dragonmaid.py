@@ -362,9 +362,8 @@ BYPASS_HOST_GATEKEEPER = os.getenv("BYPASS_HOST_GATEKEEPER", "false").strip().lo
 SYSTEM_PROMPT = {
     "role": "system", 
     "content": (
-        "You are DragonMaid, a loyal and efficient personal assistant. Keep answers brief. "
-        "Use tools to manage reminders, manage files, search the web, run terminal tasks on the host, or run code. "
-        "Before searching news, remember your current time context is already provided to you automatically."
+        "You are DragonMaid, a loyal and helpful maid assistant. Keep responses brief and polite. "
+        "Use your tools to manage files, run terminal tasks, execute code, and search the web."
     )
 }
 
@@ -1496,7 +1495,14 @@ def run_agent_turn(messages, executed_calls_this_turn=None):
         return run_agent_turn(messages, executed_calls_this_turn)
     
     Memory.save(messages)
-    return assistant_message.get("content", "")
+    # Prefer assistant content, but if empty, fall back to the last non-empty message
+    reply = assistant_message.get("content", "")
+    if not reply:
+        for m in reversed(messages):
+            if m.get("content"):
+                reply = m.get("content")
+                break
+    return reply
 
 
 # --- Advanced Background Scheduler Engine ---
@@ -1715,6 +1721,7 @@ def handle_command(text: str) -> str:
             "• <code>/model</code> : View or change the active LLM, API URL, and key.\n"
             "• <code>/history &lt;num&gt;</code> : Set the max message history window (e.g. /history 15).\n"
             "• <code>/dream</code> : Manually trigger memory consolidation right now.\n"
+            "• <code>/clear history</code> : Wipe the conversation history file (history.json).\n"
             "• <code>/help</code> : View this command list."
         )
         return help_text
@@ -1786,6 +1793,32 @@ def handle_command(text: str) -> str:
         save_dynamic_config()
         print(f"[Command Router] MAX_HISTORY_MESSAGES dynamically updated to {num}.")
         return f"⚙️ <b>Config Updated:</b> Chat history window has been set to <b>{num}</b> messages."
+
+    elif cmd == "/clear":
+        # Support: /clear history  -> permanently wipe history.json
+        target = arg.strip().lower()
+        if not target:
+            return "⚠️ Usage: /clear history"
+
+        if target in ("history", "history.json", "all", "everything"):
+            # Ask for explicit approval before wiping sensitive file
+            approved = request_user_approval(
+                "Clear conversation history",
+                "This will permanently delete all conversation history stored in history.json. This action is irreversible.",
+                warning_level="high"
+            )
+            if not approved:
+                log_debug("TOOL_REJECTED", "clear history denied by user")
+                return "❌ Action cancelled by user. History not modified."
+
+            try:
+                Memory.save([SYSTEM_PROMPT])
+                log_debug("TOOL_INVOKE", "history cleared via /clear command")
+                return "✅ <b>History cleared:</b> conversation history wiped."
+            except Exception as e:
+                return f"Error clearing history: {e}"
+
+        return "⚠️ Unknown target for /clear. Try: /clear history"
 
     elif cmd == "/status":
         print("[Command Router] Status query triggered.")
