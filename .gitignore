@@ -1,0 +1,22 @@
+# Local environment variables containing private keys/tokens
+.env
+
+# Python virtual environments
+myenv/
+venv/
+.venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Workspace database/files and local logs
+workspace/
+dragonmaid.log
+
+# System files
+.DS_Store
+Thumbs.db
