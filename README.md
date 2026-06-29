@@ -1,8 +1,24 @@
-# DragonMaid House — Local LLM Agent Framework
+# 🌸 DragonMaid — Local LLM Agent Framework 🌸
 
-DragonMaid House is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS (Apple Silicon M3) and Linux (Debian). It coordinates a lead orchestrator agent (**House Dragonmaid**) and a roster of specialized sub-agents (**Chamber, Parlor, Kitchen, Nurse, Laundry**) capable of executing tasks autonomously and concurrently.
+DragonMaid House is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS and Linux (Debian). It coordinates a lead orchestrator agent (**House Dragonmaid**) and a roster of specialized sub-agents (**Chamber, Parlor, Kitchen, Nurse, Laundry**) capable of executing tasks autonomously and concurrently.
 
 <br>
+
+
+
+## Agent Roster
+
+- **🌸 House Dragonmaid** (Orchestrator) — Runs the main loop and routes complex tasks to sub-agents.
+- **🧹 Chamber Dragonmaid** (CI/CD) — Environment setups, Ansible, and Git operations.
+- **🛋️ Parlor Dragonmaid** (Network) — Apache, DNS BIND9, firewall rules, and packet captures.
+- **🍳 Kitchen Dragonmaid** (SysAdmin) — DB optimization, Docker management, and system stats.
+- **🩺 Nurse Dragonmaid** (Security) — Audit logs, vulnerability audits, repairs, and backups.
+- **🧺 Laundry Dragonmaid** (Cleanup) — File rotation, sanitization, caches, and Windows PowerShell.
+
+
+<br>
+
+
 
 ## Features
 - **Local Ollama Integration**: Runs completely locally with minimal external dependencies.
@@ -125,12 +141,3 @@ Tools expect JSON code blocks. The system prompt instructs models to output tool
 
 <br>
 
-
-## Agent Roster
-
-- **House Dragonmaid** (Orchestrator) — Runs the main loop and routes complex tasks to sub-agents.
-- **Chamber Dragonmaid** (CI/CD) — Environment setups, Ansible, and Git operations.
-- **Parlor Dragonmaid** (Network) — Nginx, DNS BIND9, firewall rules, and packet captures.
-- **Kitchen Dragonmaid** (SysAdmin) — DB optimization, Docker management, and system stats.
-- **Nurse Dragonmaid** (Security) — Audit logs, vulnerability audits, repairs, and backups.
-- **Laundry Dragonmaid** (Cleanup) — File rotation, sanitization, caches, and Windows PowerShell.
