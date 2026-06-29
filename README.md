@@ -1,6 +1,6 @@
 # 🌸 DragonMaid — Local LLM Agent Framework 🌸
 
-DragonMaid House is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS and Linux (Debian). It coordinates a lead orchestrator agent (**House Dragonmaid**) and a roster of specialized sub-agents (**Chamber, Parlor, Kitchen, Nurse, Laundry**) capable of executing tasks autonomously and concurrently.
+DragonMaid is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS and Linux (Debian). It coordinates the lead orchestrator agent **House Dragonmaid** and a roster of specialized sub-agents **Chamber, Parlor, Kitchen, Nurse, Laundry** capable of executing tasks autonomously and concurrently.
 
 <br>
 
@@ -30,15 +30,26 @@ DragonMaid House is a lightweight, secure Python framework designed to run local
 
 <br>
 
+> [!WARNING]
+> Be carefoul with it, its still an AI agent that can touch and run command directly on the machine.
+
+
+
+<br>
+
 
 ## Setup Instructions
 
 ### Prerequisites
 - Python 3.9+
 - Ollama running locally. Ensure you have pulled a suitable small model (e.g. `granite4.1:3b`, `qwen2.5-coder:3b`, `gemma3:4b`):
+
   ```bash
   ollama pull granite4.1:3b
   ```
+> [!NOTE]
+> If you have enough RAM to run bigger model like granite4.1:8b dont hesitate to do it because it is a way better.
+
 
 ### Installation
 
@@ -93,6 +104,12 @@ Start the application:
 ```
 This launches the interactive CLI in the main terminal, starts the reminders checker and Dream Mode activity monitor in the background, and runs the Telegram bot listener (if a bot token is provided).
 
+> [!IMPORTANT]
+> Ensure ollama is running on youre machine:
+>
+>```bash
+>ollama serve
+>```
 
 <br>
 
