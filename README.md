@@ -29,7 +29,7 @@ DragonMaid is a lightweight, secure Python framework designed to run local LLMs 
 <br>
 
 > [!WARNING]
-> Be carefoul with it, its still an AI agent that can touch and run command directly on the machine.
+> Be carefoul with it, it still an AI agent that can touch and run command directly on the machine.
 
 
 
