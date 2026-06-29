@@ -2,7 +2,7 @@
 
 DragonMaid House is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS (Apple Silicon M3) and Linux (Debian). It coordinates a lead orchestrator agent (**House Dragonmaid**) and a roster of specialized sub-agents (**Chamber, Parlor, Kitchen, Nurse, Laundry**) capable of executing tasks autonomously and concurrently.
 
----
+<br>
 
 ## Features
 - **Local Ollama Integration**: Runs completely locally with minimal external dependencies.
@@ -12,7 +12,8 @@ DragonMaid House is a lightweight, secure Python framework designed to run local
 - **Background Reminders**: Supports relative and absolute scheduling for both the user and the agent itself.
 - **Dual Interfaces**: Native colored CLI and a whitelisted, long-polling Telegram bot.
 
----
+<br>
+
 
 ## Setup Instructions
 
@@ -28,20 +29,22 @@ DragonMaid House is a lightweight, secure Python framework designed to run local
 #### macOS & Linux
 1. Clone the repository and navigate into it:
    ```bash
-   git clone https://github.com/your-username/dragonmaid.git
+   git clone https://github.com/FLOPJ77/DragonMaid.git
    cd dragonmaid
    ```
 2. Set up the virtual environment (if not already done):
    ```bash
    python3 -m venv myenv
    source myenv/bin/activate
-   pip install -r requirements.txt
+   pip install requests
    ```
    *(Note: The only dependency is `requests` to keep the codebase lightweight and audit-friendly.)*
 
 3. Configure environment variables in `.env` (see section below).
 
----
+
+<br>
+
 
 ## Configuration (`.env`)
 
@@ -62,7 +65,9 @@ ALLOW_HOST_EXECUTION=false  # Set true to enable bash/python commands on the hos
 WORKSPACE_DIR=./workspace
 ```
 
----
+
+<br>
+
 
 ## Running the Framework
 
@@ -72,7 +77,9 @@ Start the application:
 ```
 This launches the interactive CLI in the main terminal, starts the reminders checker and Dream Mode activity monitor in the background, and runs the Telegram bot listener (if a bot token is provided).
 
----
+
+<br>
+
 
 ## Chat Commands
 Commands work in both the CLI and Telegram:
@@ -84,7 +91,9 @@ Commands work in both the CLI and Telegram:
 - `/clear` — Clear the current chat context and unload the model from RAM.
 - `/stop` — Unload the model from memory and graceful shutdown.
 
----
+
+<br>
+
 
 ## Tool Calling Format
 
@@ -113,7 +122,9 @@ Tools expect JSON code blocks. The system prompt instructs models to output tool
 6. **`reminders`**: Set timer alerts.
    - Args: `{"action": "schedule"|"list"|"cancel", "time": "in 5m"|"18:30", "message": "msg", "recipient": "user"|"agent"}`
 
----
+
+<br>
+
 
 ## Agent Roster
 
