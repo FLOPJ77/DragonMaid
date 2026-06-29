@@ -46,7 +46,8 @@ DragonMaid is a lightweight, secure Python framework designed to run local LLMs 
   ollama pull granite4.1:3b
   ```
 > [!NOTE]
-> If you have enough RAM to run bigger model like granite4.1:8b dont hesitate to do it because it is a way better.
+> If you have enough RAM to run bigger model like `granite4.1:8b` dont hesitate to do it because it is a way better.
+> You can find more info about small local LLM here [AI Local Models](https://github.com/FLOPJ77/Guides/blob/main/ai_local_models.md) 
 
 
 ### Installation
