@@ -4,8 +4,6 @@ DragonMaid is a lightweight, secure Python framework designed to run local LLMs 
 
 <br>
 
-
-
 ## Agent Roster
 
 - **🌸 House Dragonmaid** (Orchestrator) — Runs the main loop and routes complex tasks to sub-agents.
@@ -154,6 +152,19 @@ Tools expect JSON code blocks. The system prompt instructs models to output tool
    - Args: `{}`
 6. **`reminders`**: Set timer alerts.
    - Args: `{"action": "schedule"|"list"|"cancel", "time": "in 5m"|"18:30", "message": "msg", "recipient": "user"|"agent"}`
+  
+
+<br>
+
+# THANK YOU! AND SEE YOU SOON!
+
+This is my first attempt to make something like this so it can miss a lot of tools and cool features that others framworks have but i am working on a newer version with a lot of new features!
+
+### Feel free to use it and modify it and make it better for you!
+
+<br>
+
+![Apple](https://img.shields.io/badge/macOS-white?style=for-the-badge&logo=apple&logoColor=black) ![Linux](https://img.shields.io/badge/Linux-FF6B9D?style=for-the-badge&logo=linux&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-ff2954?style=for-the-badge&logo=debian&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-9B35D4?style=for-the-badge&logo=gnubash&logoColor=white) [![Ollama](https://img.shields.io/badge/Ollama-white?style=for-the-badge&logo=ollama&logoColor=black)](https://ollama.com) ![AI Agents](https://img.shields.io/badge/AI%20Agents-00c46c?style=for-the-badge)
 
 
 <br>
