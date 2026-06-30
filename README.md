@@ -5,6 +5,16 @@
   </div>
 </div>
 
+<br>
+
+<div align="center">
+
+![Linux](https://img.shields.io/badge/Linux-FF6B9D?style=for-the-badge&logo=linux&logoColor=white) ![Apple](https://img.shields.io/badge/macOS-white?style=for-the-badge&logo=apple&logoColor=black) ![Debian](https://img.shields.io/badge/Debian-ff2954?style=for-the-badge&logo=debian&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-9B35D4?style=for-the-badge&logo=gnubash&logoColor=white) ![Python](https://img.shields.io/badge/Python-0f9fd4?style=for-the-badge&logo=python&logoColor=white) [![Ollama](https://img.shields.io/badge/Ollama-white?style=for-the-badge&logo=ollama&logoColor=black)](https://ollama.com) ![AI Agents](https://img.shields.io/badge/AI%20Agents-00c46c?style=for-the-badge) ![MIT License](https://img.shields.io/badge/MIT%20License-23c1fa?style=for-the-badge)
+
+</div>
+
+<br>
+
 
 # 🌸 DragonMaid — Local LLM Agent Framework 🌸
 
@@ -173,7 +183,6 @@ This is my first attempt to make something like this so it can miss a lot of too
 
 <br>
 
-![Apple](https://img.shields.io/badge/macOS-white?style=for-the-badge&logo=apple&logoColor=black) ![Linux](https://img.shields.io/badge/Linux-FF6B9D?style=for-the-badge&logo=linux&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-ff2954?style=for-the-badge&logo=debian&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-9B35D4?style=for-the-badge&logo=gnubash&logoColor=white) [![Ollama](https://img.shields.io/badge/Ollama-white?style=for-the-badge&logo=ollama&logoColor=black)](https://ollama.com) ![AI Agents](https://img.shields.io/badge/AI%20Agents-00c46c?style=for-the-badge)
 
 
 <br>
