@@ -62,6 +62,7 @@ DragonMaid is a lightweight, secure Python framework designed to run local LLMs 
 - Ollama running locally. Ensure you have pulled a suitable small model (e.g. `granite4.1:3b`, `qwen2.5-coder:3b`, `gemma3:4b`):
 
   ```bash
+  curl -fsSL https://ollama.com/install.sh | sh
   ollama pull granite4.1:3b
   ```
 > [!NOTE]
@@ -129,8 +130,8 @@ This launches the interactive CLI in the main terminal, starts the reminders che
 >ollama serve
 >```
 
-<br>
 
+<br>
 
 ## Chat Commands
 Commands work in both the CLI and Telegram:
