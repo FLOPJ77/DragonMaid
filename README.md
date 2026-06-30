@@ -74,7 +74,7 @@ DragonMaid is a lightweight, secure Python framework designed to run local LLMs 
 1. Clone the repository and navigate into it:
    ```bash
    git clone https://github.com/FLOPJ77/DragonMaid.git
-   cd dragonmaid
+   cd DragonMaid
    ```
 2. Set up the virtual environment (if not already done):
    ```bash
