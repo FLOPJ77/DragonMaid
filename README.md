@@ -1,5 +1,5 @@
 
-<img width="900" alt="Dragonmaid" src="https://github.com/user-attachments/assets/64c5759b-f637-4a49-bdf0-82a809725c6c" />
+<img width="600" alt="Dragonmaid" src="https://github.com/user-attachments/assets/64c5759b-f637-4a49-bdf0-82a809725c6c" />
 
 # 🌸 DragonMaid — Local LLM Agent Framework 🌸
 
