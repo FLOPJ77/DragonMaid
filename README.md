@@ -19,7 +19,7 @@
 
 # 🌸 DragonMaid — Local LLM Agent Framework 🌸
 
-DragonMaid is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS and Linux (Debian). It coordinates the lead orchestrator agent **House Dragonmaid** and a roster of specialized sub-agents **Chamber, Parlor, Kitchen, Nurse, Laundry** capable of executing tasks autonomously and concurrently.
+DragonMaid is a lightweight, secure Python framework designed to run local LLMs via Ollama on macOS and Linux (Debian). It coordinates the lead orchestrator agent **House Dragonmaid** and a roster of specialized sub-agents **Chamber, Parlor, Kitchen, Nurse, Laundry** capable of executing tasks autonomously and concurrently. While is built on [macOS & Debian](#macos--linux) it can work on Windows too following this guide [Windows installation guide](https://github.com/FLOPJ77/DragonMaid/windows_installation_guide.md)
 
 <br>
 
@@ -177,7 +177,7 @@ Tools expect JSON code blocks. The system prompt instructs models to output tool
 
 <br>
 
-# THANK YOU! AND SEE YOU SOON!
+# 🙏🏻 THANK YOU! AND SEE YOU SOON!
 
 This is my first attempt to make something like this so it can miss a lot of tools and cool features that others framworks have but i am working on a newer version with a lot of new features!
 
