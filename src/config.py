@@ -63,5 +63,42 @@ class Config:
             return False
         return val.lower() in ("true", "1", "yes", "on")
 
+    def save_env_value(self, key, value):
+        """
+        Updates or appends a key-value pair in the local .env file.
+        """
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        env_path = os.path.join(project_root, ".env")
+        
+        lines = []
+        key_found = False
+        
+        if os.path.exists(env_path):
+            with open(env_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+                
+        new_lines = []
+        for line in lines:
+            stripped = line.strip()
+            if stripped and not stripped.startswith("#") and "=" in stripped:
+                k, v = stripped.split("=", 1)
+                if k.strip() == key:
+                    new_lines.append(f"{key}={value}\n")
+                    key_found = True
+                    continue
+            new_lines.append(line)
+            
+        if not key_found:
+            if new_lines and not new_lines[-1].endswith("\n"):
+                new_lines[-1] += "\n"
+            new_lines.append(f"{key}={value}\n")
+            
+        try:
+            with open(env_path, "w", encoding="utf-8") as f:
+                f.writelines(new_lines)
+            os.environ[key] = str(value)
+        except Exception as e:
+            print(f"Error saving {key} to .env: {e}", file=sys.stderr)
+
 # Singleton configuration instance
 config = Config()

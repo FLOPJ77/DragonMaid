@@ -149,20 +149,25 @@ def handle_command(cmd_line, chat_history):
             print_error("Please specify a model name. Example: /model qwen2.5-coder:3b")
         else:
             config.model = arg
+            config.save_env_value("MODEL", arg)
             logger.info("System", f"Switched model to: {arg}")
             print_system(f"Active model switched to '{COLOR_MODEL}{arg}{COLOR_SYSTEM}'")
         return True
     elif cmd == "/host":
         if arg.lower() in ("on", "true", "1", "yes"):
             config.allow_host_execution = True
+            config.save_env_value("ALLOW_HOST_EXECUTION", "true")
             logger.info("System", "Host execution enabled via command.")
             print_system("Host execution has been enabled.")
         elif arg.lower() in ("off", "false", "0", "no"):
             config.allow_host_execution = False
+            config.save_env_value("ALLOW_HOST_EXECUTION", "false")
             logger.info("System", "Host execution disabled via command.")
             print_system("Host execution has been disabled.")
         elif not arg:
             config.allow_host_execution = not config.allow_host_execution
+            val_str = "true" if config.allow_host_execution else "false"
+            config.save_env_value("ALLOW_HOST_EXECUTION", val_str)
             logger.info("System", f"Host execution toggled to: {config.allow_host_execution}")
             print_system(f"Host execution is now {'ENABLED' if config.allow_host_execution else 'DISABLED'}.")
         else:

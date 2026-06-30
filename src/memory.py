@@ -64,36 +64,30 @@ def run_dream_mode():
             logger.error("System", f"Dream Mode: Failed to read knowledge.md: {e}")
             
     # 3. Build synthesis prompt
-    dream_prompt = f"""You are the memory consolidation assistant for DragonMaid House.
+    dream_prompt = f"""You are a personal profile compiler for DragonMaid House.
 Review the following recent conversation history:
 --- RECENT HISTORY ---
 {history_text}
 ----------------------
 
-Here is the existing consolidated knowledge from previous sessions:
---- EXISTING KNOWLEDGE ---
-{existing_knowledge or "[No existing knowledge]"}
---------------------------
+Existing Profile:
+{existing_knowledge or "[No existing profile]"}
 
-Please synthesize this information and write an updated, structured markdown knowledge summary.
-Your goal is to extract:
-1. Key facts about the user, system setup, or preferences.
-2. Important decisions made during the chats.
-3. Pending tasks or reminders that need attention.
+Please synthesize this information and compile a clean, minimal user profile card.
+Only keep critical permanent facts: Name, Surname, Job/Role, and essential user settings/preferences.
+Do NOT include conversation summaries, task details, or topic explanations. Keep the entire profile under 5 bullet points.
 
-Merge new details into the existing knowledge cleanly. Do not lose old facts unless they are outdated or explicitly changed.
+Format the output strictly as a markdown document:
+# User Profile
+- Name: <value>
+- Job/Role: <value>
+- Key Notes: <value>
 
-Format the output strictly as a markdown document starting with '# Consolidated Knowledge'.
-Include sections:
-- ## Facts
-- ## Key Decisions
-- ## Pending Tasks
-
-Output the markdown contents directly. Do NOT wrap the markdown in a code block. Do NOT include any introductory or conversational text (e.g. "Here is the summary:").
+Output ONLY the markdown. Do NOT wrap it in a code block. Do NOT write any introduction or conversation.
 """
 
     messages = [
-        {"role": "system", "content": "You are a dense memory consolidation system. Output markdown directly with no extra text."},
+        {"role": "system", "content": "You are a dense user profile compiler. Output user profile markdown directly with no conversational text."},
         {"role": "user", "content": dream_prompt}
     ]
     

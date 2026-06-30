@@ -72,20 +72,25 @@ def handle_telegram_command(cmd_line, chat_id, user_id):
             send_telegram_message(chat_id, "⚠️ Please specify a model name. Example: `/model qwen2.5-coder:3b`")
         else:
             config.model = arg
+            config.save_env_value("MODEL", arg)
             logger.info("Telegram", f"Switched model to: {arg} (by user {user_id})")
             send_telegram_message(chat_id, f"✅ Active model switched to `{arg}`.")
             
     elif cmd == "/host":
         if arg.lower() in ("on", "true", "1", "yes"):
             config.allow_host_execution = True
+            config.save_env_value("ALLOW_HOST_EXECUTION", "true")
             logger.info("Telegram", f"Host execution enabled by user {user_id}.")
             send_telegram_message(chat_id, "✅ Host execution has been enabled.")
         elif arg.lower() in ("off", "false", "0", "no"):
             config.allow_host_execution = False
+            config.save_env_value("ALLOW_HOST_EXECUTION", "false")
             logger.info("Telegram", f"Host execution disabled by user {user_id}.")
             send_telegram_message(chat_id, "✅ Host execution has been disabled.")
         elif not arg:
             config.allow_host_execution = not config.allow_host_execution
+            val_str = "true" if config.allow_host_execution else "false"
+            config.save_env_value("ALLOW_HOST_EXECUTION", val_str)
             logger.info("Telegram", f"Host execution toggled to {config.allow_host_execution} by user {user_id}.")
             status_str = "ENABLED" if config.allow_host_execution else "DISABLED"
             send_telegram_message(chat_id, f"🔄 Host execution is now *{status_str}*.")
